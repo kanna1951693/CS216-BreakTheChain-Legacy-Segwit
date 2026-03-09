@@ -5,7 +5,7 @@ rpc_password = "pass"
 
 rpc = AuthServiceProxy(f"http://{rpc_user}:{rpc_password}@127.0.0.1:18443")
 print("Connected to chain:", rpc.getblockchaininfo()["chain"])
-
+# load or create wallet
 try:
     rpc.loadwallet("testwallet")
     print("Wallet loaded")
@@ -30,9 +30,7 @@ print(f"Address C: {C}")
 rpc.sendtoaddress(A, 1)
 rpc.generatetoaddress(1, miner)
 
-# -------------------------
 # TRANSACTION A → B
-# -------------------------
 utxo_A = next(u for u in rpc.listunspent() if u["address"] == A)
 
 funded_AB = rpc.fundrawtransaction(
@@ -62,9 +60,7 @@ txid_AB = rpc.sendrawtransaction(signed_AB["hex"])
 print(f"\nTXID A→B: {txid_AB}")
 rpc.generatetoaddress(1, miner)
 
-# -------------------------
 # TRANSACTION B → C
-# -------------------------
 utxo_B = next(u for u in rpc.listunspent() if u["address"] == B)
 
 funded_BC = rpc.fundrawtransaction(
@@ -92,3 +88,4 @@ for vin in decoded_signed_BC["vin"]:
 txid_BC = rpc.sendrawtransaction(signed_BC["hex"])
 print(f"\nTXID B→C: {txid_BC}")
 rpc.generatetoaddress(1, miner)
+
