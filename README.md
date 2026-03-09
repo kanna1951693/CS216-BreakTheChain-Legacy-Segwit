@@ -184,13 +184,13 @@ This separation of witness data is the key feature of SegWit and reduces the eff
 
 | Transaction | Size | vsize | Weight |
 |-------------|------|-------|--------|
-| Legacy A→B  | 119  |  119  |   476  |
-| Legacy B→C  | 119  |  119  |   476  |
-| SegWit A→B  | 115  |  115  |   460  |
-| SegWit B→C  | 115  |  115  |   460  |
+| Legacy A→B  | 225  |  225  |   900  |
+| Legacy B→C  | 225  |  225  |   900  |
+| SegWit A→B  | 247  |  166  |   661  |
+| SegWit B→C  | 247  |  166  |   661  |
 
-SegWit introduces a new weight metric where witness data counts only one quarter as much as non-witness data.  
-Because the signature data is moved to the witness structure and discounted in weight calculation, SegWit transactions have a smaller effective size and therefore lower transaction fees.
-
-
+SegWit introduces a new weight metric where witness data counts only one quarter as much as non-witness data.
+Although SegWit raw size (247 bytes) is larger than Legacy (225 bytes), the witness data is discounted
+in vsize calculation. This results in a much smaller vsize of 166 vbytes compared to 225 vbytes for Legacy —
+a saving of approximately 26%.
 
