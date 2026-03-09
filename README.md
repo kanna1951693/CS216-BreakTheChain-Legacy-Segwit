@@ -36,6 +36,8 @@ We implemented scripts that:
 - **btcdeb** — stepping through and validating Bitcoin scripts
 - **Python 3** — transaction automation and analysis
 - **python-bitcoinrpc** — RPC communication with Bitcoin node
+- **btcdeb** — stepping through and validating Bitcoin scripts
+  - Install: https://github.com/bitcoin-core/btcdeb
 
 ## Project Structure
 ```
@@ -129,6 +131,23 @@ python3 src/Analysis.py
 ```bash
 bitcoin-cli -regtest stop
 ```
+
+## Script Debugging with btcdeb
+
+After running the scripts, use btcdeb to validate script execution manually.
+
+### Legacy (P2PKH) example:
+```bash
+btcdeb '[  OP_DUP OP_HASH160  OP_EQUALVERIFY OP_CHECKSIG]'
+```
+
+### SegWit (P2SH-P2WPKH) example:
+```bash
+btcdeb '[  OP_DUP OP_HASH160  OP_EQUALVERIFY OP_CHECKSIG]'
+```
+
+Screenshots of btcdeb execution are available in `screenshots/legacy/` and `screenshots/segwit/`.
+
 ## Transaction Workflow
 
 For both Legacy and SegWit implementations the following workflow was used:
