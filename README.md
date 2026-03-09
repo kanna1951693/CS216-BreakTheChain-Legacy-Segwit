@@ -73,6 +73,7 @@ cd CS216-BreakTheChain-Legacy-Segwit
 ### Step 2 – Configure Bitcoin Core
 Copy the example configuration file:
 ```bash
+mkdir -p ~/.bitcoin
 cp bitcoin.conf.example ~/.bitcoin/bitcoin.conf
 ```
 
