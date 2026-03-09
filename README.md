@@ -34,7 +34,18 @@ Team Members:
 - **Python 3** — transaction automation and analysis
 - **python-bitcoinrpc** — RPC communication with Bitcoin node
 
+## Install Requirements
+```bash
+pip install -r requirements.txt
+```
+## External Tools Required
 
+The following system tools must be installed before running the project:
+
+- **Bitcoin Core (bitcoind, bitcoin-cli)** – used to run a local Bitcoin node in regtest mode
+- **btcdeb** – Bitcoin Script debugger used to step through script execution
+
+Make sure `bitcoind` is running in regtest mode before executing the Python scripts.
 ## Project Structure
 ```
 CS216-BreakTheChain-Legacy-Segwit/
@@ -90,11 +101,6 @@ bitcoin-cli -regtest -rpcwallet=testwallet generatetoaddress 101 "$address"
 ### Step 7 – Check Balance
 ```bash
 bitcoin-cli -regtest -rpcwallet=testwallet getbalance
-```
-
-### Step 8 – Install Python Library
-```bash
-pip install python-bitcoinrpc
 ```
 
 ## Running the Programs
