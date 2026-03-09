@@ -41,14 +41,8 @@ We implemented scripts that:
 ```bash
 pip install -r requirements.txt
 ```
-## External Tools Required
-
-The following system tools must be installed before running the project:
-
-- **Bitcoin Core (bitcoind, bitcoin-cli)** – used to run a local Bitcoin node in regtest mode
-- **btcdeb** – Bitcoin Script debugger used to step through script execution
-
 Make sure `bitcoind` is running in regtest mode before executing the Python scripts.
+
 ## Project Structure
 ```
 CS216-BreakTheChain-Legacy-Segwit/
@@ -65,6 +59,14 @@ CS216-BreakTheChain-Legacy-Segwit/
 ├── bitcoin.conf.example
 └── requirements.txt
 ```
+
+## Screenshots
+
+The `screenshots/` directory contains:
+- decoded transactions for both Legacy and SegWit
+- btcdeb script execution traces
+- analysis results comparing transaction sizes
+
 ## Setting Up the Environment
 (after downloading the tools and dependencies)
 
@@ -153,7 +155,11 @@ Unlocking: `<signature> <pubkey>`
 
 ### SegWit (P2SH-P2WPKH)
 Locking: `OP_HASH160 <scripthash> OP_EQUAL`
-Unlocking: scriptSig contains redeem script, signature and pubkey go into witness field
+Unlocking:
+- The `scriptSig` contains the redeem script
+- The signature and public key are stored in the `txinwitness` field
+
+This separation of witness data is the key feature of SegWit and reduces the effective size of the transaction.
 
 ## Transaction Size Comparison
 
