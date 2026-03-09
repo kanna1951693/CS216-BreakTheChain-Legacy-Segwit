@@ -37,12 +37,6 @@ We implemented scripts that:
 - **Python 3** — transaction automation and analysis
 - **python-bitcoinrpc** — RPC communication with Bitcoin node
 
-## Install Requirements
-```bash
-pip install -r requirements.txt
-```
-Make sure `bitcoind` is running in regtest mode before executing the Python scripts.
-
 ## Project Structure
 ```
 CS216-BreakTheChain-Legacy-Segwit/
@@ -107,6 +101,11 @@ bitcoin-cli -regtest -rpcwallet=testwallet generatetoaddress 101 "$address"
 ```bash
 bitcoin-cli -regtest -rpcwallet=testwallet getbalance
 ```
+### Step 8 – Install Python Library
+```bash
+pip install -r requirements.txt
+```
+Make sure `bitcoind` is running in regtest mode before executing the Python scripts.
 
 ## Running the Programs
 
