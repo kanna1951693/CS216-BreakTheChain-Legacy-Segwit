@@ -1,0 +1,22 @@
+# Bitcoin Core Configuration File
+# Copy this file to ~/.bitcoin/bitcoin.conf
+
+# Network - use regtest for local testing
+regtest=1
+
+# Enable RPC server
+server=1
+
+# RPC credentials
+rpcuser=user
+rpcpassword=pass
+
+# Fee settings (required by assignment)
+paytxfee=0.0001
+fallbackfee=0.0002
+mintxfee=0.00001
+txconfirmtarget=6
+
+# Allow RPC connections from localhost
+rpcallowip=127.0.0.1
+rpcport=18443
