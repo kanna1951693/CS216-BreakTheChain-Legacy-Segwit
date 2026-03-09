@@ -20,11 +20,14 @@ We implemented scripts that:
 6. Validate script execution step by step using btcdeb debugger
 7. Compare transaction sizes, vsize and weight between Legacy and SegWit
 
-Team Members: 
-• Name: Boddu_Kunal               | Roll No: 240003020 
-• Name: Shaik Riyaj               | Roll No: 240001068 
-• Name: Sangati Chakradhar Reddy  | Roll No: 240001063 
-• Name: Kesavarapu__Deepak__Reddy | Roll No: 240041022
+## Team Members — Break The Chain
+
+| Name | Roll Number |
+|------|-------------|
+| Boddu Kunal | 240003020 |
+| Shaik Riyaj | 240001068 |
+| Sangati Chakradhar Reddy | 240001063 |
+| Kesavarapu Deepak Reddy | 240041022 |
 
 ## Tools and Dependencies
 
