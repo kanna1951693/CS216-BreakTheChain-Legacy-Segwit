@@ -47,7 +47,7 @@ tx_proposal_AB = rpc.fundrawtransaction(
     ),
     {"changeAddress": A}
 )
-signed_AB = rpc.signrawtransactionwithwallet(tx_proposal["hex"])
+signed_AB = rpc.signrawtransactionwithwallet(tx_proposal_AB["hex"])
 decoded_AB = rpc.decoderawtransaction(signed_AB["hex"])  # decode signed tx
 
 print("\n======== TRANSACTION A → B ========")
@@ -80,7 +80,7 @@ tx_proposal_BC = rpc.fundrawtransaction(
     ),
     {"changeAddress": B}
 )
-signed_BC = rpc.signrawtransactionwithwallet(funded_BC["hex"])
+signed_BC = rpc.signrawtransactionwithwallet(tx_proposal_BC["hex"])
 decoded_signed_BC = rpc.decoderawtransaction(signed_BC["hex"])  # decode signed tx
 
 print("\n========== TRANSACTION B → C ==========")
@@ -99,3 +99,4 @@ for vin in decoded_signed_BC["vin"]:
 txid_BC = rpc.sendrawtransaction(signed_BC["hex"])
 print(f"\nTXID B→C: {txid_BC}")
 rpc.generatetoaddress(1, miner)
+
