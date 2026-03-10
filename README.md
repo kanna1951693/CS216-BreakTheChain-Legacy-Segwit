@@ -36,8 +36,6 @@ We implemented scripts that:
 - **btcdeb** — stepping through and validating Bitcoin scripts
 - **Python 3** — transaction automation and analysis
 - **python-bitcoinrpc** — RPC communication with Bitcoin node
-- **btcdeb** — stepping through and validating Bitcoin scripts
-  - Install: https://github.com/bitcoin-core/btcdeb
 
 ## Project Structure
 ```
